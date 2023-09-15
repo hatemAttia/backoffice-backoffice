@@ -1,0 +1,91 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+
+<!-- <app-tools></app-tools> -->
+<div class="card mb-4">
+  <div class="card-body">
+    <div class="row gx-3 gy-2 align-items-center">
+      <div class="col-md-10 p-2">
+      <h2>Conferences List</h2>
+      </div>
+      <div class="col-md-2 p-2">
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="openAddConference()">
+        Add Conference
+      </button>
+   
+  </div>
+</div>
+</div>
+</div>
+<!-- Bootstrap Table -->
+<div class="card">
+ 
+ <div class="main-body">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Data Sience" #input>
+    </mat-form-field>
+    
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+    
+        <!-- Conference title Column -->
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Conference </th>
+          <td mat-cell (click)="conferenceDetails(row)" *matCellDef="let row"> {{row.title}}</td>
+        </ng-container>
+    
+        <!-- Description Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+          <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+        </ng-container>
+    
+        <!-- Organizer Full Name Column -->
+        <ng-container matColumnDef="organizerName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Organizer Full Name</th>
+          <td mat-cell *matCellDef="let row"> {{row.organizerName}} </td>
+        </ng-container>
+
+        <!-- Start Date Column -->
+        <ng-container matColumnDef="startDate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </th>
+          <td mat-cell *matCellDef="let row"> {{row.startDate | date:'yyyy-MM-dd'}} </td>
+        </ng-container>
+
+        <!-- End Date Column -->
+        <ng-container matColumnDef="endDate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> End Date </th>
+          <td mat-cell *matCellDef="let row"> {{row.endDate | date:'yyyy-MM-dd'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+          <td mat-cell *matCellDef="let row">
+           <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+            <mat-icon (click)="openEditConference(row)">edit</mat-icon>
+      </button>
+              
+          </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap Table with Caption -->
+
+</div>

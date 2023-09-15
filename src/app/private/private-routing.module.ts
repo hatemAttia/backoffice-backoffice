@@ -1,16 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BaseComponent } from './components/layout/base/base.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: BaseComponent,
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./components/dashboard/dashboard.module').then((m) => m.DashboardModule),
+      },
+      {
+        path: '',
+        loadChildren: () =>
+          import('./components/dashboard/dashboard.module').then((m) => m.DashboardModule),
+      },
+      {
+        path: 'conferences',
+        loadChildren: () =>
+          import('./components/conferences/conferences.module').then((m) => m.ConferencesModule),
+      }
+    ],
   },
-  {
-    path: '**',
-    redirectTo: '',
-  },
+
 ];
 
 @NgModule({

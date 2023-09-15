@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "name": "Sara",
+      "id": "1",
+      "email": "test@test.com",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "email": "test@test.com",
+      "password": "123456",
+      "id": "Ab7H1oG"
+    }
+  ],
+  "conferences": [
+  { 
+    "id": 1,
+    "title": "Data Science",
+    "description": "Conference Data science",
+    "startDate": "2023-09-06T18:43:43.000+00:00",
+    "endDate": "2023-09-06T18:43:43.000+00:00",
+    "organizer": {
+          "id": 1,
+          "name": "Raouaa Jbeli",
+          "phoneNumber": "55337910",
+          "email": "raouaa@gmail.com",
+          "password": "$2a5105hXLfKrhs1y704.qr6H7Lzu.ydN1T.64hA16.00fQlvqx67LPOq",
+          "isActive": false,
+          "deletedAt": null
+    }
+  }
+  ]
+ 
+
+
+}

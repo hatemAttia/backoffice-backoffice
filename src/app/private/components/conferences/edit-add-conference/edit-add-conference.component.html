@@ -1,0 +1,101 @@
+<form [formGroup]="conferenceForm">
+  <h5 class="modal-title" id="exampleModalLabel1">Add a Conference</h5>
+
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label" for="basic-default-name"
+      >Title</label
+    >
+    <div class="col-sm-9">
+      <input
+        type="text"
+        class="form-control"
+        id="basic-default-name"
+        formControlName="title"
+        placeholder="Data Sience conference"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label" for="basic-default-company"
+      >Description</label
+    >
+    <div class="col-sm-9">
+      <textarea
+        id="basic-default-message"
+        class="form-control"
+        placeholder="Describe what the conference is about here ..."
+        formControlName="description"
+        aria-describedby="basic-icon-default-message2"
+      ></textarea>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <label class="col-sm-3 col-form-label" for="basic-default-email"
+      >Choose a date</label
+    >
+    <div class="col-sm-4">
+      <mat-form-field>
+        <mat-label>Start Date</mat-label>
+        <input matInput 
+        [min]='todayDate'
+        [matDatepicker]="picker" 
+        formControlName="startDate" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-4">
+      <mat-form-field>
+        <mat-label>End Date</mat-label>
+        <input matInput 
+        [matDatepicker]="picker2" formControlName="endDate" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker2"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+  <!-- <div class="row mb-3">
+    <label class="col-sm-3 col-form-label" for="basic-default-phone"
+      >Status</label
+    >
+    <div class="col-sm-9">
+      <mat-button-toggle-group
+        formControlName="isActive"
+        name="fontStyle"
+        aria-label="Font Style"
+      >
+        <mat-button-toggle value="true">Active</mat-button-toggle>
+        <mat-button-toggle value="false">Inactive</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div> -->
+  <!-- <div class="row mb-3">
+    <label class="col-sm-3 col-form-label" for="basic-default-company"
+      >Select Files</label
+    >
+    <div class="col-sm-9">
+      <input class="form-control" type="file" id="formFile" />
+    </div>
+  </div> -->
+
+  <div class="row justify-content-end">
+    <div class="col-sm-9">
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="submitConference()"
+        [disabled]="conferenceForm.invalid"
+      >
+        Save changes
+      </button>
+    </div>
+  </div>
+</form>
