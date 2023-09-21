@@ -14,13 +14,14 @@ export class LoginComponent implements OnInit {
 
   
   loginForm !: FormGroup;
-  users: any[]=[]
+  users: any[]=[];
+  index :any
   constructor(private fb: FormBuilder, private service: AuthService,private router: Router, private toastr: ToastrService) { }
 // constructor(){}
 
   ngOnInit(): void {
-   this.getUsers();
    this.createForm();
+   this.getUsers();
   }
 
 
@@ -45,27 +46,30 @@ login(){
     role: "admin"
   }
 
-let index =this.users.findIndex(item=> item.email == this.loginForm.value.email && item.password == this.loginForm.value.password )
-if(index ==-1)
+this.index =this.users.find(item=> item.email == this.loginForm.value.email && item.password == this.loginForm.value.password )
+if(!this.index)
 {
    this.toastr.error("this email or password is not correct","",{
    disableTimeOut: false,
    titleClass:"toastr_title",
    messageClass:"toastr_message",
-   timeOut: 5000,
+   timeOut: 2000,
    closeButton: true,
    })
 }else{
-  this.service.login(this.loginForm.value).subscribe(res =>{
-  this.toastr.success("Login succes","",{
-    disableTimeOut: false,
-    titleClass:"toastr_title",
-    messageClass:"toastr_message",
-    timeOut: 5000,
-    closeButton: true,
-    })
+    sessionStorage.setItem('UserId',this.index.id);
+    sessionStorage.setItem('userName',this.index.name);
+    sessionStorage.setItem('UserRole',this.index.role);
+    this.toastr.success("Login succes","",{
+      disableTimeOut: false,
+      titleClass:"toastr_title",
+      messageClass:"toastr_message",
+      timeOut: 2000,
+      closeButton: true,
+      })
     this.router.navigate(['/conferences'])
-  })
+  
+
 }
 
 

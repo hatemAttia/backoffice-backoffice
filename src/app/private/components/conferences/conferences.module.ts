@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ConferencesRoutingModule } from './conferences-routing.module';
 import { ToolsComponent } from './tools/tools.component';
-import { EditConferenceComponent } from './edit-conference/edit-conference.component';
+import { AddConferenceComponent } from './add-conference/add-conference.component';
 import { DetailConferenceComponent } from './detail-conference/detail-conference.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';

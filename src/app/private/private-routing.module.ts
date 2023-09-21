@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './components/layout/layout.component';
+import { AddConferenceComponent } from './components/conferences/add-conference/add-conference.component';
 
 const routes: Routes = [
   {

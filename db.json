@@ -10,28 +10,57 @@
     {
       "email": "test@test.com",
       "password": "123456",
-      "id": "Ab7H1oG"
+      "id": "D4YJTsX"
     }
   ],
   "conferences": [
-  { 
-    "id": 1,
-    "title": "Data Science",
-    "description": "Conference Data science",
-    "startDate": "2023-09-06T18:43:43.000+00:00",
-    "endDate": "2023-09-06T18:43:43.000+00:00",
-    "organizer": {
-          "id": 1,
-          "name": "Raouaa Jbeli",
-          "phoneNumber": "55337910",
-          "email": "raouaa@gmail.com",
-          "password": "$2a5105hXLfKrhs1y704.qr6H7Lzu.ydN1T.64hA16.00fQlvqx67LPOq",
-          "isActive": false,
-          "deletedAt": null
+    {
+      "title": "Big Data Conference",
+      "description": "vvbbnnjjuurree",
+      "startDate": "2023-09-19T23:00:00.000Z",
+      "endDate": "2023-09-20T23:00:00.000Z",
+      "id": 2,
+      "organizer": {
+        "id": 2,
+        "name": "Raouaa Jbeli",
+        "phoneNumber": "55337910",
+        "email": "raouaa@gmail.com",
+        "password": "$2a5105hXLfKrhs1y704.qr6H7Lzu.ydN1T.64hA16.00fQlvqx67LPOq",
+        "isActive": false,
+        "deletedAt": null
+      }
+    },
+    {
+      "title": "Big Data Conference",
+      "description": "vvbbnnjjuurree",
+      "startDate": "2023-09-19T23:00:00.000Z",
+      "endDate": "2023-09-20T23:00:00.000Z",
+      "id": 2,
+      "organizer": {
+        "id": 3,
+        "name": "Raouaa Jbeli",
+        "phoneNumber": "55337910",
+        "email": "raouaa@gmail.com",
+        "password": "$2a5105hXLfKrhs1y704.qr6H7Lzu.ydN1T.64hA16.00fQlvqx67LPOq",
+        "isActive": false,
+        "deletedAt": null
+      }
+    },
+    {
+      "title": "qdqdqd",
+      "description": "wqdqwd",
+      "startDate": "2023-09-20T23:00:00.000Z",
+      "endDate": "2023-09-14T23:00:00.000Z",
+      "id": 3,
+      "organizer": {
+        "id": 3,
+        "name": "Raouaa Jbeli",
+        "phoneNumber": "55337910",
+        "email": "raouaa@gmail.com",
+        "password": "$2a5105hXLfKrhs1y704.qr6H7Lzu.ydN1T.64hA16.00fQlvqx67LPOq",
+        "isActive": false,
+        "deletedAt": null
+      }
     }
-  }
   ]
- 
-
-
 }

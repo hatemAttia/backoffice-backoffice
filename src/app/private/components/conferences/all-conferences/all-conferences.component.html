@@ -4,10 +4,10 @@
 <div class="card mb-4">
   <div class="card-body">
     <div class="row gx-3 gy-2 align-items-center">
-      <div class="col-md-10 p-2">
+      <div class="col-md-9 p-2">
       <h2>Conferences List</h2>
       </div>
-      <div class="col-md-2 p-2">
+      <div class="col-md-3 p-2">
       <!-- Button trigger modal -->
       <button
         type="button"
@@ -35,7 +35,7 @@
         <!-- Conference title Column -->
         <ng-container matColumnDef="title">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Conference </th>
-          <td mat-cell (click)="conferenceDetails(row)" *matCellDef="let row"> {{row.title}}</td>
+          <td mat-cell routerLink="/conferences/details/{{row.id}}" *matCellDef="let row"  [ngStyle]="{'cursor': 'pointer','color': '#0b57d0'}"> {{row.title}}</td>
         </ng-container>
     
         <!-- Description Column -->

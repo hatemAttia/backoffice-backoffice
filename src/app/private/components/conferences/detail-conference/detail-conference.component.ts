@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ConferencesService } from '../services/conferences.service';
 import { Conference } from '../context/DTO';
+import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-detail-conference',
   templateUrl: './detail-conference.component.html',
@@ -10,26 +11,48 @@ import { Conference } from '../context/DTO';
 })
 export class DetailConferenceComponent implements OnInit {
 
+  deleteConfForm!: FormGroup;
+  conference: any ;
+ conferenceId :any;
 
-  conference: Conference;
-
-  constructor(private activatedRoute:ActivatedRoute,
+  constructor(private _activatedRoute:ActivatedRoute,
     private _router:Router,
     private _confService : ConferencesService,
-    private _toastrService:ToastrService) { }
+    private _toastrService:ToastrService,
+    private router: Router,
+    private _fb:FormBuilder) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params=>{
-      if(params["id"]){
-        this.getConferenceDetail(params["id"])
-      }
+   this.conferenceId =this._activatedRoute.snapshot.paramMap.get('id');
+   this._confService.getConferenceDetail(this.conferenceId).subscribe(
+    (data)=>{
+      this.conference = data ;
+      console.log("this is conference details  :",this.conference)
+    },(error)=>{
+      console.error("error fetching conference details:",error);
+    }
+    );
+    this.deleteConfForm = this._fb.group({
+      check: [false]
     })
+    console.log(this.deleteConfForm.value.check)
   }
 
-  getConferenceDetail(id:number) {
-    this._confService.getConferenceDetail(id).subscribe((response) => {
-      this.conference = response.data[0];
-    });
-  }
 
+  deleteConference(id:number){
+
+
+    
+    if (this.deleteConfForm.value.check) {    
+    this._confService.deleteConference(id).subscribe({
+      next:(response)=>{
+        this._toastrService.success("Conference Deleted!","Success")
+        this.router.navigate(['/conferences'])
+    },error: console.log,
+    })
+
+  }else{
+    this._toastrService.error("Please check first!")
+  }
+}
 }

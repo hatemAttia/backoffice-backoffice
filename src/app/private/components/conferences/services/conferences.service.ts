@@ -16,10 +16,11 @@ export class ConferencesService {
     return this._http.get(environment.baseApi+'/conferences');
     
   }
-  getConferenceDetail(id : any): Observable<Conference>{
-    let newPath= environment.baseApi+"cars/getbyıd?carId="+id
-    return this._http.get<Conference>(
-      newPath
+
+
+  getConferenceDetail(id : any): Observable<any>{
+    return this._http.get(
+      environment.baseApi+`/conferences/${id}`
     );
   }
 
@@ -33,4 +34,12 @@ export class ConferencesService {
     console.log(model)
   return this._http.put(environment.baseApi+`/conferences/${id}`,model);
   }
+
+  deleteConference(id : number): Observable<any>{
+    return this._http.delete(environment.baseApi+`/conferences/${id}`);
+  }
+
+  
 }
+
+
