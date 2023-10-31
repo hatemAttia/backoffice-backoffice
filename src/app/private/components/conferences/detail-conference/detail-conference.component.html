@@ -3,17 +3,18 @@
     <div class="col-md-12">
       <ul class="nav nav-pills flex-column flex-md-row mb-3">
         <li class="nav-item">
-          <a class="nav-link active" href="javascript:void(0);">
+          <a class="nav-link active" routerLink="/conferences/details/{{conferenceId}}">
             <i class="bx bx-bell me-1"></i> Details</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bx bx-link-alt me-1"></i> Connections</a>
+          <a class="nav-link" routerLink="/conferences/details/papers/{{conferenceId}}"><i class="bx bx-link-alt me-1"></i> Papers</a>
         </li>
       </ul>
       <div class="card">
         <!-- Notifications -->
         <h5 class="card-header">Conference Details</h5>
         <div class="card-body">
+
           <div class="row g-0">
             <div class="col-md-2">
               <img
@@ -29,23 +30,36 @@
                   {{conference.description}}
                 </p>
                 <p class="card-text">
-                  <small class="text-muted">the Conference will took place in {{conference.startDate | date:'yyyy-MM-dd'}} and will end in {{conference.endDate | date:'yyyy-MM-dd'}}</small>
+                  <small class="text-muted">this Conference will take/took place in 
+                    <span class="badge bg-label-primary">{{conference.startDate | date:'yyyy-MM-dd'}}</span> 
+                    and will end in <span class="badge bg-label-primary">{{conference.endDate | date:'yyyy-MM-dd'}}</span></small>
                 </p>
               </div>
             </div>
-          </div>
+          </div> 
+        
+        
+        
+        </div>
+      </div>
+      <br />
+      <div class="card">
+        <h5 class="card-header">Papers related to this conference :</h5>
+        <div class="card-body">
+          <app-all-papers [conferenceId]= 'conferenceId' ></app-all-papers>
         </div>
       </div>
 
+
       <br />
+
+
+
       <div class="card">
         <h5 class="card-header">Delete Conference</h5>
         <div class="card-body">
           <div class="mb-3 col-12 mb-0">
             <div class="alert alert-warning">
-              <h6 class="alert-heading fw-bold mb-1">
-                Are you sure you want to delete conference?
-              </h6>
               <p class="mb-0">
                 Once you delete this conference, there is no going back. Please be
                 certain.

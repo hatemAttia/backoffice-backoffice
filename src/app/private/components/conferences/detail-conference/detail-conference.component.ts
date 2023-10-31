@@ -7,7 +7,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-detail-conference',
   templateUrl: './detail-conference.component.html',
-  styleUrls: ['./detail-conference.component.scss']
+  styleUrls: ['./detail-conference.component.scss'],
+  
 })
 export class DetailConferenceComponent implements OnInit {
 
@@ -19,11 +20,16 @@ export class DetailConferenceComponent implements OnInit {
     private _router:Router,
     private _confService : ConferencesService,
     private _toastrService:ToastrService,
-    private router: Router,
     private _fb:FormBuilder) { }
 
   ngOnInit(): void {
-   this.conferenceId =this._activatedRoute.snapshot.paramMap.get('id');
+   //this.conferenceId =this._activatedRoute.snapshot.paramMap.get('id');
+  this._activatedRoute.paramMap.subscribe((param)=>{
+    this.conferenceId= param.get('id');
+  })
+
+
+
    this._confService.getConferenceDetail(this.conferenceId).subscribe(
     (data)=>{
       this.conference = data ;
@@ -47,7 +53,7 @@ export class DetailConferenceComponent implements OnInit {
     this._confService.deleteConference(id).subscribe({
       next:(response)=>{
         this._toastrService.success("Conference Deleted!","Success")
-        this.router.navigate(['/conferences'])
+        this._router.navigate(['/conferences'])
     },error: console.log,
     })
 

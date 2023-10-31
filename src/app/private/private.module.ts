@@ -21,7 +21,8 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
-import { DetailConferenceComponent } from './components/conferences/detail-conference/detail-conference.component';
+import { EditAddPapersComponent } from './components/papers/edit-add-papers/edit-add-papers.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -31,7 +32,9 @@ import { DetailConferenceComponent } from './components/conferences/detail-confe
     DashboardComponent,
     FooterComponent,
     AllConferencesComponent,
+    EditAddPapersComponent,
     LayoutComponent,
+    EditAddPapersComponent
   ],
   imports: [
     CommonModule, 
@@ -46,6 +49,7 @@ import { DetailConferenceComponent } from './components/conferences/detail-confe
     MatButtonToggleModule,
     MatTableModule,
     MatPaginatorModule, 
+    MatChipsModule,
     MatMenuModule,
     MatSortModule,
     RouterModule],

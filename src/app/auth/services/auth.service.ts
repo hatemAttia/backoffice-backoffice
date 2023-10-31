@@ -25,11 +25,11 @@ constructor(private http: HttpClient) { }
   }
 
 isLoggedIn(){
-  return sessionStorage.getItem('userName')!=null;
+  return sessionStorage.getItem('userName');
 }
 
 getUserRole(){
-  return sessionStorage.getItem('UserRole')!=null?sessionStorage.getItem('userRole')?.toString():'';
+  return sessionStorage.getItem('UserRole')!=null?sessionStorage.getItem('UserRole')?.toString():'';
 }
 
 }

@@ -16,7 +16,11 @@ export class LoginComponent implements OnInit {
   loginForm !: FormGroup;
   users: any[]=[];
   index :any
-  constructor(private fb: FormBuilder, private service: AuthService,private router: Router, private toastr: ToastrService) { }
+  constructor(private fb: FormBuilder, private service: AuthService,
+    private router: Router, 
+    private toastr: ToastrService) { 
+      sessionStorage.clear();
+    }
 // constructor(){}
 
   ngOnInit(): void {
@@ -57,6 +61,7 @@ if(!this.index)
    closeButton: true,
    })
 }else{
+  if (this.index.role=="admin") {
     sessionStorage.setItem('UserId',this.index.id);
     sessionStorage.setItem('userName',this.index.name);
     sessionStorage.setItem('UserRole',this.index.role);
@@ -67,7 +72,15 @@ if(!this.index)
       timeOut: 2000,
       closeButton: true,
       })
-    this.router.navigate(['/conferences'])
+    this.router.navigate(['/'])
+  } else {
+    this.toastr.error("Admin Only","",{
+      disableTimeOut: false,
+      titleClass:"toastr_title",
+      timeOut: 2000,
+    })
+  }
+    
   
 
 }

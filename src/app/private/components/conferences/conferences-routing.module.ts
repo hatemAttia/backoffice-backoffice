@@ -16,7 +16,7 @@ const routes: Routes = [{
 {
   path: 'addConference',
   component: AddConferenceComponent
-} 
+}  
 ];
 
 @NgModule({

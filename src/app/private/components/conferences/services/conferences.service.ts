@@ -18,7 +18,7 @@ export class ConferencesService {
   }
 
 
-  getConferenceDetail(id : any): Observable<any>{
+  getConferenceDetail(id : any): Observable<any>{ 
     return this._http.get(
       environment.baseApi+`/conferences/${id}`
     );
@@ -36,7 +36,7 @@ export class ConferencesService {
   }
 
   deleteConference(id : number): Observable<any>{
-    return this._http.delete(environment.baseApi+`/conferences/${id}`);
+    return this._http.delete(environment.baseApi+`/conferences/${id}`); 
   }
 
   

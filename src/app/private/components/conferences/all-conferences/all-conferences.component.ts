@@ -46,7 +46,7 @@ mappingConferences(data : any[] ){
  let conferencesList = data.map(item =>{
   return{
     ...item,
-    organizerName: item.organizer.name
+    organizerName: item.organizer?.name
   }
  })
  return conferencesList

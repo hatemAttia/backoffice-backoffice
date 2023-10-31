@@ -39,8 +39,8 @@ export class AddConferenceComponent implements OnInit {
         startDate:['',Validators.required],
         endDate:['',Validators.required],
         // isActive:['',Validators.required],
-        // organizerId:['1']
-      })
+        organizerId:sessionStorage.getItem('UserId')
+      }) 
     }
 
   ngOnInit(): void {

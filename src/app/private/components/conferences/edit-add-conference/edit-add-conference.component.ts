@@ -21,7 +21,7 @@ import {MatDialogRef,MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog'
     MatInputModule,
     MatButtonToggleModule,
     MatDatepickerModule,
-    MatNativeDateModule,
+    MatNativeDateModule, 
     FormsModule,
     ReactiveFormsModule,
   ]
@@ -56,12 +56,6 @@ export class EditAddConferenceComponent implements OnInit {
   ngOnInit(): void {
     this.conferenceForm.patchValue(this.data)
   }
-
-
-
-// selectFile(event: any){
-// this.conferenceForm.get('paper')?.setValue(event.target.file[0])
-// }
 
 submitConference(){
   if (this.conferenceForm.valid) {
