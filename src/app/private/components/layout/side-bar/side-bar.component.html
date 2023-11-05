@@ -90,7 +90,7 @@
   <ul class="menu-inner py-1">
     <!-- Dashboard -->
     <li class="menu-item" routerLink="" routerLinkActive="active">
-      <a href="index.html" class="menu-link">
+      <a class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Analytics">Dashboard</div>
       </a>
@@ -134,14 +134,14 @@
         <div data-i18n="Account Settings">Profiles</div>
       </a>
       <ul class="menu-sub">
-        <li class="menu-item">
-          <a href="pages-account-settings-account.html" class="menu-link">
-            <div data-i18n="Account" routerLinkActive="active" >Admin list</div>
+        <li class="menu-item" routerLink="/users/accounts" routerLinkActive="active">
+          <a class="menu-link" style="cursor:pointer;">
+            <div data-i18n="Account" >Admin list</div>
           </a>
         </li>
-        <li class="menu-item">
-          <a href="pages-account-settings-account.html" class="menu-link">
-            <div data-i18n="Account" routerLinkActive="active" >Create Account</div>
+        <li class="menu-item" routerLink="/users/add-user" routerLinkActive="active">
+          <a class="menu-link" style="cursor:pointer;">
+            <div data-i18n="Account">Create Account</div>
           </a>
         </li>
       </ul>

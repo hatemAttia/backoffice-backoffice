@@ -14,12 +14,16 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { EditAddConferenceComponent } from './edit-add-conference/edit-add-conference.component';
 
 @NgModule({
   declarations: [
     ToolsComponent,
     DetailConferenceComponent,
     AllPapersComponent,
+    EditAddConferenceComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +37,10 @@ import { MatSortModule } from '@angular/material/sort';
     MatMenuModule,
     MatSortModule,
     MatDatepickerModule, MatNativeDateModule,
-    ConferencesRoutingModule
+    ConferencesRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    
   ] 
 })
 export class ConferencesModule { }

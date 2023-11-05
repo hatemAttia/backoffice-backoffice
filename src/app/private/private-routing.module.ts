@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './components/layout/layout.component';
 import { GuardGuard } from '../guard/guard.guard';
 import { EditAddPapersComponent } from './components/papers/edit-add-papers/edit-add-papers.component';
-import { DetailConferenceComponent } from './components/conferences/detail-conference/detail-conference.component';
 
 const routes: Routes = [
   {
@@ -37,13 +36,12 @@ const routes: Routes = [
           component: EditAddPapersComponent,
       },
       {
-        path: 'conferences/details/:id',
+        path: 'users',
         canActivate: [GuardGuard],
         loadChildren: () =>
-          import('./components/conferences/conferences.module').then((m) => m.ConferencesModule),
-          component: DetailConferenceComponent,
+          import('./components/users/users.module').then((m) => m.UsersModule),
       }
-    ],
+    ], 
   },
 
 ];

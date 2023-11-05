@@ -30,7 +30,6 @@ export class AllPapersComponent implements OnInit {
     
           // Check if res is an object and convert it into an array of one object
           const dataArray = Array.isArray(res) ? res : [res];
-    
           const mappedData = this.mappingPapers(dataArray);
           this.dataSource = new MatTableDataSource(mappedData);
           this.dataSource.sort = this.sort;

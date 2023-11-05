@@ -5,14 +5,17 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            style="cursor:pointer;"
-            routerLink="/conferences/details/{{conferenceId}}"
+            style="cursor: pointer"
+            routerLink="/conferences/details/{{ conferenceId }}"
           >
             <i class="bx bx-bell me-1"></i> Details</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/conferences/details/papers/{{conferenceId}}" >
+          <a
+            class="nav-link active"
+            routerLink="/conferences/details/papers/{{ conferenceId }}"
+          >
             <i class="bx bx-link-alt me-1"></i> Papers</a
           >
         </li>
@@ -53,10 +56,14 @@
               <label class="col-sm-3 col-form-label" for="docPdf"
                 >Attach File</label
               >
-              <div class="col-sm-9"> 
-              <input class="form-control" (change)="onSelectFile($event)" type="file" >
+              <div class="col-sm-9">
+                <input
+                  class="form-control"
+                  (change)="onSelectFile($event)"
+                  type="file"
+                />
+              </div>
             </div>
-          </div>
 
             <div class="row mb-3">
               <label class="col-sm-3 col-form-label" for="basic-default-company"
@@ -88,17 +95,22 @@
                     />
                   </mat-chip-list>
                 </mat-form-field>
-
-                
               </div>
             </div>
-
-            <div class="mt-2">
-              <button type="button" 
-              (click)="savePaper(PaperForm)"
-              [disabled]="PaperForm.invalid"                
-               class="btn btn-primary me-2">Save changes</button>
-              <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+            <div class="row justify-content-end">
+              <div class="col-sm-4">
+                <button
+                  type="button"
+                  (click)="savePaper(PaperForm)"
+                  [disabled]="PaperForm.invalid"
+                  class="btn btn-primary me-2"
+                >
+                  Save changes
+                </button>
+                <button type="reset" class="btn btn-outline-secondary">
+                  Cancel
+                </button>
+              </div>
             </div>
           </form>
         </div>

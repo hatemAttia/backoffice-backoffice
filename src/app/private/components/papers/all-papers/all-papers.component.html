@@ -1,4 +1,6 @@
-<div class="table-container" *ngIf="dataSource">
+        <div class="card-body"  *ngIf="dataSource">
+          <h5 class="card-header">Papers related to this conference :</h5>
+          <div class="table-container">
   <table mat-table [dataSource]="dataSource">
   
       <!-- title Column -->
@@ -37,4 +39,5 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
     <br>
+</div>
 </div>

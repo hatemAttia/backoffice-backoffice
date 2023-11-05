@@ -23,6 +23,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import { EditAddPapersComponent } from './components/papers/edit-add-papers/edit-add-papers.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { AdminUsersComponent } from './components/users/all-users/all-users.component';
 
 
 @NgModule({
@@ -32,9 +33,9 @@ import { MatChipsModule } from '@angular/material/chips';
     DashboardComponent,
     FooterComponent,
     AllConferencesComponent,
-    EditAddPapersComponent,
     LayoutComponent,
-    EditAddPapersComponent
+    EditAddPapersComponent,
+    AdminUsersComponent
   ],
   imports: [
     CommonModule, 
@@ -52,7 +53,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatChipsModule,
     MatMenuModule,
     MatSortModule,
-    RouterModule],
+    RouterModule,
+  ],
   providers: [],
 })
 export class PrivateModule {}

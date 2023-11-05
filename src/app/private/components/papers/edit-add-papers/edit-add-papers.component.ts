@@ -51,8 +51,8 @@ export class EditAddPapersComponent implements OnInit {
 
 
   onSelectFile(event: any ){
-  const file= event.target.files[0];
-  this.paperFile =  file ;
+    this.paperFile =  event.target.files[0];
+    console.log('file',this.paperFile)
   }
 
   savePaper(submitForm :FormGroup){

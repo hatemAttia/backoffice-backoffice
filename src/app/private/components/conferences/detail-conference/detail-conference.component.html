@@ -3,18 +3,25 @@
     <div class="col-md-12">
       <ul class="nav nav-pills flex-column flex-md-row mb-3">
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/conferences/details/{{conferenceId}}">
-            <i class="bx bx-bell me-1"></i> Details</a>
+          <a
+            class="nav-link active"
+            routerLink="/conferences/details/{{ conferenceId }}"
+          >
+            <i class="bx bx-bell me-1"></i> Details</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/conferences/details/papers/{{conferenceId}}"><i class="bx bx-link-alt me-1"></i> Papers</a>
+          <a
+            class="nav-link"
+            routerLink="/conferences/details/papers/{{ conferenceId }}"
+            ><i class="bx bx-link-alt me-1"></i> Papers</a
+          >
         </li>
       </ul>
       <div class="card">
         <!-- Notifications -->
         <h5 class="card-header">Conference Details</h5>
         <div class="card-body">
-
           <div class="row g-0">
             <div class="col-md-2">
               <img
@@ -25,35 +32,120 @@
             </div>
             <div class="col-md-10">
               <div class="card-body">
-                <h5 class="card-title">{{conference.title}}</h5>
+                <h5 class="card-title">{{ conference?.title }}</h5>
                 <p class="card-text">
-                  {{conference.description}}
+                  {{ conference?.description }}
                 </p>
                 <p class="card-text">
-                  <small class="text-muted">this Conference will take/took place in 
-                    <span class="badge bg-label-primary">{{conference.startDate | date:'yyyy-MM-dd'}}</span> 
-                    and will end in <span class="badge bg-label-primary">{{conference.endDate | date:'yyyy-MM-dd'}}</span></small>
+                  <small class="text-muted"
+                    >this Conference will take/took place in
+                    <span class="badge bg-label-primary">{{
+                      conference?.startDate | date : "yyyy-MM-dd"
+                    }}</span>
+                    and will end in
+                    <span class="badge bg-label-primary">{{
+                      conference?.endDate | date : "yyyy-MM-dd"
+                    }}</span></small
+                  >
                 </p>
+
+                <form [formGroup]="conferenceForm">
+                  <div class="row mb-3">
+                    <label
+                      class="col-sm-2 col-form-label"
+                      for="basic-default-name"
+                      >Title</label
+                    >
+                    <div class="col-sm-9">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="basic-default-name"
+                        formControlName="title"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label
+                      class="col-sm-2 col-form-label"
+                      for="basic-default-company"
+                      >Description</label
+                    >
+                    <div class="col-sm-9">
+                      <textarea
+                        id="basic-default-message"
+                        class="form-control"
+                        placeholder="Describe what the conference is about here ..."
+                        formControlName="description"
+                        aria-describedby="basic-icon-default-message2"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="row mb-4">
+                    <label
+                      class="col-sm-2 col-form-label"
+                      for="basic-default-email"
+                      >Choose a date</label
+                    >
+                    <div class="col-sm-4">
+                      <mat-form-field>
+                        <mat-label>Start Date</mat-label>
+                        <input
+                          matInput
+                          [min]="todayDate"
+                          [matDatepicker]="picker"
+                          formControlName="startDate"
+                        />
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle
+                          matIconSuffix
+                          [for]="picker"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-sm-4">
+                      <mat-form-field>
+                        <mat-label>End Date</mat-label>
+                        <input
+                          matInput
+                          [matDatepicker]="picker2"
+                          formControlName="endDate"
+                        />
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle
+                          matIconSuffix
+                          [for]="picker2"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-end">
+                    <div class="col-sm-4">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        (click)="submitConference()"
+                        [disabled]="conferenceForm.invalid"
+                      >
+                        Save changes
+                      </button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
-          </div> 
-        
-        
-        
+          </div>
         </div>
       </div>
       <br />
       <div class="card">
-        <h5 class="card-header">Papers related to this conference :</h5>
-        <div class="card-body">
-          <app-all-papers [conferenceId]= 'conferenceId' ></app-all-papers>
-        </div>
+        <app-all-papers [conferenceId]="conferenceId"></app-all-papers>
       </div>
 
-
       <br />
-
-
 
       <div class="card">
         <h5 class="card-header">Delete Conference</h5>
@@ -61,8 +153,8 @@
           <div class="mb-3 col-12 mb-0">
             <div class="alert alert-warning">
               <p class="mb-0">
-                Once you delete this conference, there is no going back. Please be
-                certain.
+                Once you delete this conference, there is no going back. Please
+                be certain.
               </p>
             </div>
           </div>
@@ -77,7 +169,11 @@
                 >I confirm deleting the conference</label
               >
             </div>
-            <button type="button" (click)="deleteConference(conference.id)" class="btn btn-danger deactivate-account">
+            <button
+              type="button"
+              (click)="deleteConference(conference.id)"
+              class="btn btn-danger deactivate-account"
+            >
               Delete Conference
             </button>
           </form>
