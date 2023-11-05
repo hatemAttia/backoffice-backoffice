@@ -290,10 +290,10 @@ svg {
   vertical-align: middle;
 }
 
-table {
+/* table {
   caption-side: bottom;
   border-collapse: collapse;
-}
+} */
 
 caption {
   padding-top: 0.625rem;
@@ -302,13 +302,13 @@ caption {
   text-align: left;
 }
 
-th {
+/* th {
   font-weight: 600;
   text-align: inherit;
   text-align: -webkit-match-parent;
-}
+} */
 
-thead,
+/* thead,
 tbody,
 tfoot,
 tr,
@@ -317,7 +317,7 @@ th {
   border-color: inherit;
   border-style: solid;
   border-width: 0;
-}
+} */
 
 label {
   display: inline-block;
@@ -406,16 +406,6 @@ legend {
 }
 legend + * {
   clear: left;
-}
-
-::-webkit-datetime-edit-fields-wrapper,
-::-webkit-datetime-edit-text,
-::-webkit-datetime-edit-minute,
-::-webkit-datetime-edit-hour-field,
-::-webkit-datetime-edit-day-field,
-::-webkit-datetime-edit-month-field,
-::-webkit-datetime-edit-year-field {
-  padding: 0;
 }
 
 ::-webkit-inner-spin-button {
@@ -1942,7 +1932,7 @@ progress {
     --bs-gutter-y: 3rem;
   }
 }
-.table {
+/* .table {
   --bs-table-bg: transparent;
   --bs-table-accent-bg: transparent;
   --bs-table-striped-color: #697a8d;
@@ -1971,13 +1961,13 @@ progress {
 }
 .table > :not(:first-child) {
   border-top: 2px solid #d9dee3;
-}
+} */
 
 .caption-top {
   caption-side: top;
 }
 
-.table-sm > :not(caption) > * > * {
+/* .table-sm > :not(caption) > * > * {
   padding: 0.3125rem 0.625rem;
 }
 
@@ -2104,7 +2094,7 @@ progress {
   --bs-table-hover-color: #fff;
   color: #fff;
   border-color: #394859;
-}
+} */
 
 .table-responsive {
   overflow-x: auto;
@@ -6087,7 +6077,7 @@ a.invert-bg-dark:hover, a.invert-bg-dark:focus {
   white-space: nowrap;
 }
 
-.table-secondary {
+/* .table-secondary {
   --bs-table-bg: #e7e9ed;
   --bs-table-striped-bg: #e2e5e9;
   --bs-table-striped-color: #435971;
@@ -6247,7 +6237,7 @@ a.invert-bg-dark:hover, a.invert-bg-dark:focus {
 .table.table-flush-spacing thead tr > td:last-child,
 .table.table-flush-spacing tbody tr > td:last-child {
   padding-right: 0;
-}
+} */
 
 .nav-align-top .table:not(.table-dark),
 .nav-align-top .table:not(.table-dark) thead:not(.table-dark) th,
@@ -15244,7 +15234,7 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
 .content-wrapper {
   display: flex;
   align-items: stretch;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   flex-direction: column;
   justify-content: space-between;
 }

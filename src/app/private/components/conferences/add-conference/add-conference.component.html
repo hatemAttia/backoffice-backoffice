@@ -1,0 +1,75 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-pills flex-column flex-md-row mb-3">
+          <li class="nav-item">
+            <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> New Conference</a>
+          </li>
+        </ul>
+        <div class="card mb-4">
+          <h5 class="card-header">Set the Conference Details</h5>
+          <!-- Account -->
+          <div class="card-body">
+            <form [formGroup]="conferenceForm">
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label for="firstName" class="form-label">Title</label>
+                  <textarea
+        class="form-control"
+        id="basic-default-name"
+        formControlName="title"
+        placeholder="Data Sience conference"></textarea>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="lastName" class="form-label">Description</label>
+                  <textarea
+                  id="basic-default-message"
+                  class="form-control"
+                  placeholder="Describe what the conference is about here ..."
+                  formControlName="description"
+                  aria-describedby="basic-icon-default-message2"
+                >
+              </textarea>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="email" class="form-label">Choose a date</label>
+                  <mat-form-field>
+                    <input matInput 
+                    [min]='todayDate'
+                    [matDatepicker]="picker" 
+                    formControlName="startDate" />
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle
+                      matIconSuffix
+                      [for]="picker"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="email" class="form-label">End Date</label>
+                  <mat-form-field>
+                    <input matInput 
+                    [matDatepicker]="picker2" formControlName="endDate" />
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle
+                      matIconSuffix
+                      [for]="picker2"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="mt-2">
+                <button type="button" 
+                (click)="submitConference()"
+                [disabled]="conferenceForm.invalid"                
+                 class="btn btn-primary me-2">Save changes</button>
+                <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

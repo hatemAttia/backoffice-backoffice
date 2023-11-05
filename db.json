@@ -1,0 +1,118 @@
+{
+  "users": [
+    {
+      "name": "Sara",
+      "id": "admin",
+      "email": "test@test.com",
+      "password": "123456",
+      "role": "admin",
+      "country": "sousse",
+      "phone_nber": "51549966"
+    },
+    {
+      "password": "",
+      "id": "86aglsv",
+      "name": "sourour",
+      "email": "ssssss@kf",
+      "role": "admin",
+      "country": "sahloul",
+      "phone_nber": "5746768758"
+    },
+    {
+      "name": "siwar mejbri",
+      "email": "sdjfjksd@sdfsd",
+      "role": "admin",
+      "country": "sahloul darna",
+      "phone_nber": "45873453745",
+      "password": "",
+      "id": "mtkC4tD"
+    },
+    {
+      "name": "farah",
+      "email": "kdjsadkj@ldkfd",
+      "role": "subscriber",
+      "country": "mon adresse",
+      "phone_nber": "347587348563",
+      "password": "",
+      "id": "jqY7mHI"
+    },
+    {
+      "name": "dasfsdf",
+      "email": "sdfsdf@dfg",
+      "role": "admin",
+      "country": "sdfsdf",
+      "phone_nber": "sdfsd657567",
+      "password": "",
+      "id": "PiJYmPb"
+    }
+  ],
+  "conferences": [
+    {
+      "title": "Big Data Conference",
+      "description": "this is the descriptions of this conference !",
+      "startDate": "2023-11-02T23:00:00.000Z",
+      "endDate": "2023-09-20T23:00:00.000Z",
+      "id": 2
+    },
+    {
+      "title": "qdqdqd",
+      "description": "wqdqwd",
+      "startDate": "2023-09-20T23:00:00.000Z",
+      "endDate": "2023-09-14T23:00:00.000Z",
+      "id": 3,
+      "organizer": {
+        "id": 3,
+        "name": "Raouaa Jbeli",
+        "phoneNumber": "55337910",
+        "email": "raouaa@gmail.com",
+        "password": "$2a5105hXLfKrhs1y704.qr6H7Lzu.ydN1T.64hA16.00fQlvqx67LPOq",
+        "isActive": false,
+        "deletedAt": null
+      }
+    },
+    {
+      "title": "test test3",
+      "description": "test 3",
+      "startDate": "2023-11-07T23:00:00.000Z",
+      "endDate": "2023-11-09T23:00:00.000Z",
+      "organizerId": "1",
+      "id": 4
+    }
+  ],
+  "conferences1": [
+    {
+      "title": "Big Data Conference",
+      "description": "vvbbnnjjuurree",
+      "startDate": "2023-09-19T23:00:00.000Z",
+      "endDate": "2023-09-20T23:00:00.000Z",
+      "id": 2,
+      "organizer": "1"
+    },
+    {
+      "title": "sara mejbru",
+      "description": "conference 1",
+      "startDate": "2023-10-09T23:00:00.000Z",
+      "endDate": "2023-10-10T23:00:00.000Z",
+      "id": 3
+    },
+    {
+      "title": "test 2",
+      "description": "test 456777",
+      "startDate": "2023-10-18T23:00:00.000Z",
+      "endDate": "2023-10-25T23:00:00.000Z",
+      "id": 4
+    }
+  ],
+  "papers": [
+    {
+      "id": 2,
+      "authorId": 2,
+      "conferenceId": 2,
+      "docPdf": "string",
+      "keywords": "string",
+      "resume": "string",
+      "status": "PENDING",
+      "title": "string"
+    }
+  ]
+}

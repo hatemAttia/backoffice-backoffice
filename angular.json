@@ -29,6 +29,7 @@
               "src/assets/vendor/css/core.css",
               "src/assets/vendor/css/theme-default.css",
               "src/assets/css/demo.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css",
               "src/assets/vendor/libs/apex-charts/apex-charts.css",
               "src/styles.scss"
@@ -106,11 +107,15 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/styles.scss",
+            "node_modules/ngx-toastr/toastr.css"],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "307ce293-84cb-43cc-8b8e-a90ae51dff66"
   }
 }
